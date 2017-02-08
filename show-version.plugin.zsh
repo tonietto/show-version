@@ -25,8 +25,5 @@ chpwd () {
   
   # function borrowed from nodengine
   PKG=$PWD/package.json
-    if [ -f "$PKG" ] && [ "$SHOW_VERSION_LAST_DIR" != "$PWD" ]; then
-      show-version
-      SHOW_VERSION_LAST_DIR=$PWD
-    fi
+    show-version
 }
