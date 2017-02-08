@@ -1,2 +1,2 @@
-# show-version
-:bookmark: Print app name and version along with nodengine swithcer configutation in terminal when a package.json is detected
+# show app version for zsh
+:bookmark: Print app name and version in terminal along with nodengine switcher configutation when a package.json is detected.
