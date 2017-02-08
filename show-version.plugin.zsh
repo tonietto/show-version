@@ -22,8 +22,12 @@ show-version() {
 
 chpwd () {
   local PKG
-  
-  # function borrowed from nodengine
+
   PKG=$PWD/package.json
-    show-version
+    if [ -f "$PKG" ] && [ "$NODENGINE_LAST_DIR" != "$PWD" ]; then
+      show-version
+      nodengine
+      printf "\033[36m%s\033[0m \033[90m%s\033[0m\n" "node" "$(node --version)"
+      NODENGINE_LAST_DIR=$PWD
+    fi
 }
