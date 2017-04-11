@@ -19,15 +19,3 @@ show-version() {
     printf "\033[36m%s\033[0m \033[90m%s\033[0m\n" $PACKAGE_NAME "$PACKAGE_VERSION"
   fi
 }
-
-chpwd () {
-  local PKG
-
-  PKG=$PWD/package.json
-    if [ -f "$PKG" ] && [ "$NODENGINE_LAST_DIR" != "$PWD" ]; then
-      show-version
-      nodengine
-      printf "\033[36m%s\033[0m \033[90m%s\033[0m\n" "node" "$(node --version)"
-      NODENGINE_LAST_DIR=$PWD
-    fi
-}
